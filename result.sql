@@ -69,3 +69,7 @@ SELECT (ROUND(`vote`))
 FROM `exam_student`;
 
 -- 4. Contare quanti corsi di laurea ci sono per ogni dipartimento
+
+SELECT COUNT(*) `degree_course` , `department_id` as `department`
+FROM `degrees`
+GROUP BY `department`;
