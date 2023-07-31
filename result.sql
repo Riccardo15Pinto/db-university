@@ -128,3 +128,9 @@ JOIN `departments` AS DEP ON DEP.`id` = DEG.`department_id`
 WHERE DEP.`name` = 'Dipartimento di Matematica';
 
 -- 7. BONUS: Selezionare per ogni studente quanti tentativi d’esame ha sostenuto per superare ciascuno dei suoi esami
+
+SELECT COUNT(ES.`vote`) , S.`id`
+FROM `students` AS S
+JOIN `exam_student` AS ES ON S.`id` = ES.`student_id`
+JOIN `exams` AS E ON E.`id` = ES.`exam_id`
+GROUP BY S.`id`;
